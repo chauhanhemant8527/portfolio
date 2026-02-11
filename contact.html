@@ -2,123 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Contact - Hemant Chauhan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT US</title>
+    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Montserrat&family=PT+Serif:ital@1&family=Poppins:wght@300&family=Smokum&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Kalam:wght@700&family=Montserrat&family=PT+Serif:ital@1&family=Poppins:wght@300&family=Smokum&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="contact.html">
 </head>
+
 <body>
 
-    <header>
-        <nav >
-            <div class="logo">Portfolio</div>
-            <div class="menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="#">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="#">Hire me</a>
-                <i class="fa fa-search"></i>
-                <i class="fa fa-moon-o"></i>
+<header>
+    <nav>
+        <div class="logo">Hemant Chauhan</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="contact-section">
+    <div class="container">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <div class="info-box">
+                <i class="fa fa-map-marker"></i>
+                <p>Ghaziabad, India</p>
             </div>
 
-        </nav> 
+            <div class="info-box">
+                <i class="fa fa-phone"></i>
+                <p>+91 9724209274</p>
+            </div>
 
+            <div class="info-box">
+                <i class="fa fa-envelope"></i>
+                <p>chauhanhemant342@gmail.com</p>
+            </div>
 
-        <section class="contact">
+            <div class="info-box">
+                <i class="fa fa-linkedin"></i>
+                <p>
+                    <a href="https://www.linkedin.com/in/hemant-chauhan-9b9628172" target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </p>
+            </div>
+        </div>
 
-            <h1>CONTACT US </h1>          
-     </div>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Message</h2>
 
-     <div class="container">
-         <div class="contactinfo">
-             <div class="box">
-                 <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                     <div class="text">
-                         <h3>Address</h3>
-                         <p><b>Ghaziabad, India</b></p>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="5" placeholder="Type your message here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
 
-                     </div>
-                     </div>
-                 </div> 
+    </div>
+</section>
 
-                   <div class="box">
-                         <div class="icon"><i class="fa fa-phone"></i>
-                             <div class="text">
-                                 <h3>Phone</h3>
-                                 <p><b>+91 9724209274</b></p>
-                             </div>
-                         </div>
-                         </div>
-                         <div class="box">
-                             <div class="icon"><i class="fa fa-instagram"></i>
-                                 <div class="text">
-                                     <h3>Instgram</h3>
-                                     <p><b>chauhanhemant342</b></p>
-                                 </div>
-                             </div>
-                             </div>
- 
-
-                 
-               <div class="box">
-                     <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-
-                         <div class="text">
-                             <h3>Email</h3>
-                             <p><b>chauhanhemant342@gmail.com</b></p>
-                         </div>
-                     </div>
-       </div>
-                 </div>
-
-         
-
-
-         <div class="contactform">
-             <form action="">
-                 <h2>Send Message</h2>
-                 <div class="inputbox">
-                     <span>Full Name</span>
-                     <input type="text" name="" required="required">
-                     
-                 </div>
-                 <div class="inputbox">
-                     <span>Email</span>
-                     <input type="text" name="" required="required">
-                   
-                 </div>
-
-                 <div class="inputbox">
-                     <span>Type your Message</span>
-                     <textarea required="required"></textarea>
-                     
-                   
-                 </div>
-                 <div class="inputbox">
-                    <input type="submit" value="send">
-                 </div>
-                 
-
-             </form>
-             </div>
-         
-     </div>
-     
-
-        </section>
-
-    </header>>
-
-    
 </body>
 </html>
