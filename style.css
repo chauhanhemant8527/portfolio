@@ -1,4 +1,3 @@
-/* ================= GLOBAL ================= */
 *{
 margin:0;
 padding:0;
@@ -8,45 +7,20 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0f0c29;
 background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
 color:white;
 overflow-x:hidden;
 }
 
-/* Floating AI Glow Background */
-body::before{
-content:"";
+/* PARTICLES */
+#tsparticles{
 position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle,#00f7ff,transparent 70%);
-top:-200px;
-left:-200px;
-filter:blur(120px);
-animation:moveGlow 10s infinite alternate ease-in-out;
-z-index:-1;
+width:100%;
+height:100%;
+z-index:-2;
 }
 
-body::after{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle,#ff00ff,transparent 70%);
-bottom:-200px;
-right:-200px;
-filter:blur(120px);
-animation:moveGlow 12s infinite alternate ease-in-out;
-z-index:-1;
-}
-
-@keyframes moveGlow{
-0%{transform:translate(0,0)}
-100%{transform:translate(80px,80px)}
-}
-
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 nav{
 display:flex;
 justify-content:space-between;
@@ -57,7 +31,6 @@ width:100%;
 top:0;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(255,255,255,0.1);
 z-index:1000;
 }
 
@@ -73,26 +46,13 @@ background:linear-gradient(to right,#00f7ff,#ff00ff);
 margin:0 15px;
 text-decoration:none;
 color:white;
-font-weight:500;
-position:relative;
 }
 
-.menu a::after{
-content:"";
-position:absolute;
-width:0;
-height:2px;
-background:#00f7ff;
-left:0;
-bottom:-5px;
-transition:0.4s;
+.toggle{
+cursor:pointer;
 }
 
-.menu a:hover::after{
-width:100%;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 header{
 min-height:100vh;
 display:flex;
@@ -102,7 +62,7 @@ text-align:center;
 padding-top:100px;
 }
 
-.left h1{
+.hero h1{
 font-size:55px;
 font-weight:800;
 background:linear-gradient(to right,#00f7ff,#ff00ff);
@@ -116,22 +76,15 @@ margin:15px 0;
 color:#00f7ff;
 }
 
-.buttons a{
+.btn{
 display:inline-block;
 margin:15px 10px;
 padding:14px 30px;
 border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:0.4s;
-position:relative;
-overflow:hidden;
-}
-
-.btn{
-background:transparent;
 border:2px solid #00f7ff;
 color:#00f7ff;
+text-decoration:none;
+transition:0.4s;
 }
 
 .btn:hover{
@@ -141,7 +94,7 @@ box-shadow:0 0 20px #00f7ff;
 transform:translateY(-5px);
 }
 
-/* ================= GLASS CARD ================= */
+/* CARDS */
 .card{
 width:80%;
 margin:120px auto;
@@ -150,17 +103,16 @@ border-radius:25px;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(25px);
 border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 40px rgba(0,255,255,0.1);
-transition:0.6s;
+transition:0.4s;
 text-align:center;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 60px rgba(255,0,255,0.3);
+transform:scale(1.03);
+box-shadow:0 0 40px rgba(0,255,255,0.3);
 }
 
-/* ================= SKILLS ================= */
+/* SKILLS */
 .skills{
 width:80%;
 margin:80px auto;
@@ -183,26 +135,25 @@ width:0;
 background:linear-gradient(to right,#00f7ff,#ff00ff);
 border-radius:30px;
 transition:1.5s;
-box-shadow:0 0 15px #00f7ff;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
 text-align:center;
 padding:40px;
 background:rgba(0,0,0,0.4);
 margin-top:100px;
-backdrop-filter:blur(10px);
 }
 
-.social a{
-margin:0 12px;
-color:white;
-font-size:22px;
-transition:0.3s;
+/* LIGHT MODE */
+body.light{
+background:#f5f5f5;
+color:#111;
 }
-
-.social a:hover{
-color:#00f7ff;
-transform:scale(1.2);
+body.light nav{
+background:white;
+}
+body.light .card{
+background:white;
+color:black;
 }
