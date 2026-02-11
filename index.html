@@ -1,104 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hemant Chauhan | Java Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Hemant Chauhan | Java Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-
 <body>
 
-<header>
-    <nav>
-        <div class="logo">Hemant Chauhan</div>
-        <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Hemant Chauhan</div>
 
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="toggle">🌙</div>
+</nav>
+
+<!-- HERO SECTION -->
+<header>
     <div class="container">
+
         <div class="left">
             <h2>Hello, I'm</h2>
             <h1>Hemant Chauhan</h1>
-            <h3>Java Full Stack Developer</h3>
+
+            <h3 class="typing"></h3>
 
             <p>
                 Motivated Java Full Stack Developer with hands-on experience in 
-                Java, Spring Boot, REST APIs, MySQL and frontend technologies.
+                Java, Spring Boot, REST APIs and MySQL.
                 Passionate about building scalable web applications.
             </p>
 
             <div class="buttons">
-                <a href="contact.html" class="btn">Hire Me</a>
-                <a href="about.html" class="btn-outline">View Portfolio</a>
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#about" class="btn">View Portfolio</a>
             </div>
         </div>
 
         <div class="right">
             <img src="hemantchauhan.jpg" alt="Hemant Chauhan">
         </div>
+
     </div>
 </header>
 
-<!-- About Short Section -->
-<section class="about-short">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a career-transitioning software developer with strong problem-solving skills 
-            and 5 years of professional industry experience. Currently focused on backend 
-            development using Spring Boot and building secure REST APIs.
-        </p>
-        <a href="about.html" class="btn">Read More</a>
+<!-- ABOUT SECTION -->
+<section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+        I am a career-transitioning software developer with 5 years of industry experience.
+        Currently focused on backend development using Spring Boot and building secure REST APIs.
+    </p>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+        <p>Java</p>
+        <div class="bar"><div class="progress" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Spring Boot</p>
+        <div class="bar"><div class="progress" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>MySQL</p>
+        <div class="bar"><div class="progress" data-width="80%"></div></div>
     </div>
 </section>
 
-<!-- Footer -->
+<!-- CONTACT SECTION -->
+<section id="contact" class="card">
+    <h2>Contact Me</h2>
+    <p>Email: chauhanhemant342@gmail.com</p>
+    <p>Phone: +91 9724209274</p>
+    <p>Location: Ghaziabad, India</p>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <div class="footer-container">
+    <p>© 2026 Hemant Chauhan | All Rights Reserved</p>
 
-        <div class="footer-section">
-            <h3>Follow Me</h3>
-            <a href="https://www.instagram.com/chauhanhemant342/" target="_blank">
-                <i class="fa fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/hemant-chauhan-9b9628172" target="_blank">
-                <i class="fa fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-        </div>
-
-        <div class="footer-section">
-            <h3>Contact</h3>
-           <p>
-    <a href="mailto:chauhanhemant342@gmail.com">
-        chauhanhemant342@gmail.com
-    </a>
-</p>
-            <p>Phone: +91 9724209274</p>
-            <p>Location: Ghaziabad, India</p>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a><br>
-            <a href="about.html">About</a><br>
-            <a href="contact.html">Contact</a>
-        </div>
-
+    <div class="social">
+        <a href="https://www.instagram.com/chauhanhemant342/" target="_blank">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/" target="_blank">
+            <i class="fa fa-github"></i>
+        </a>
     </div>
-
-    <p class="copyright">
-        © 2026 Hemant Chauhan. All Rights Reserved.
-    </p>
 </footer>
+
+<!-- JS -->
+<script>
+/* Typing Effect */
+const text = "Java Full Stack Developer";
+let i = 0;
+function typing(){
+    if(i < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing,80);
+    }
+}
+typing();
+
+/* Dark Mode */
+document.querySelector(".toggle").onclick = function(){
+    document.body.classList.toggle("light");
+};
+
+/* Skill Animation */
+window.addEventListener("scroll", function(){
+    document.querySelectorAll(".progress").forEach(bar=>{
+        bar.style.width = bar.dataset.width;
+    });
+});
+</script>
 
 </body>
 </html>
