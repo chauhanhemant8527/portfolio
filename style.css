@@ -5,162 +5,185 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background: linear-gradient(135deg,#1f1c2c,#928dab);
-    color:white;
-}
-
 /* ================= NAVBAR ================= */
 
 nav{
     width:100%;
+    height:70px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    position:fixed;
+    padding:0 80px;
+    position:absolute;
     top:0;
-    z-index:1000;
+    z-index:10;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:600;
+    font-size:1.8rem;
+    font-weight:bold;
+    color:white;
 }
 
 .menu a{
     text-decoration:none;
     color:white;
     margin-left:20px;
-    padding:8px 14px;
-    border-radius:6px;
+    padding:8px 15px;
+    border-radius:20px;
     transition:0.3s;
 }
 
 .menu a:hover{
-    background:#00c9a7;
+    background:#00f2fe;
+    color:black;
 }
 
 /* ================= HERO SECTION ================= */
 
 header{
+    width:100%;
     min-height:100vh;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
     display:flex;
-    align-items:center;
     justify-content:center;
-    padding-top:80px;
-    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    align-items:center;
+    overflow:hidden;
 }
 
 .container{
-    width:90%;
+    width:85%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
+    padding:40px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,255,255,0.2);
+    animation:fadeIn 1.2s ease-in-out;
 }
 
 .left{
-    flex:1;
+    flex-basis:50%;
+    color:white;
+}
+
+.left h2{
+    font-weight:300;
 }
 
 .left h1{
-    font-size:48px;
-    margin:10px 0;
+    font-size:3.5rem;
+    background:linear-gradient(90deg,#00f2fe,#4facfe);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .left h3{
-    color:#00c9a7;
-    margin-bottom:15px;
+    margin-top:10px;
+    color:#00f2fe;
 }
 
 .left p{
-    max-width:500px;
-    line-height:1.6;
-    margin-bottom:25px;
+    margin-top:20px;
+    line-height:1.8;
+    color:#ddd;
 }
 
 /* Buttons */
 
 .btn{
-    background:#00c9a7;
-    padding:10px 22px;
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:linear-gradient(90deg,#00f2fe,#4facfe);
     color:white;
-    text-decoration:none;
     border-radius:30px;
-    margin-right:10px;
+    text-decoration:none;
     transition:0.3s;
+    box-shadow:0 0 20px #00f2fe;
 }
 
 .btn:hover{
-    background:#00a98b;
+    transform:scale(1.08);
 }
 
 .btn-outline{
-    border:2px solid #00c9a7;
-    padding:10px 22px;
-    color:white;
-    text-decoration:none;
+    display:inline-block;
+    margin-top:25px;
+    margin-left:15px;
+    padding:12px 28px;
+    border:2px solid #00f2fe;
+    color:#00f2fe;
     border-radius:30px;
+    text-decoration:none;
     transition:0.3s;
 }
 
 .btn-outline:hover{
-    background:#00c9a7;
+    background:#00f2fe;
+    color:black;
 }
 
 /* Right Image */
 
 .right{
-    flex:1;
+    flex-basis:40%;
     display:flex;
     justify-content:center;
 }
 
 .right img{
-    width:300px;
+    width:350px;
     border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    box-shadow:0 0 40px rgba(0,255,255,0.5);
+    transition:0.4s;
 }
 
-/* ================= ABOUT SECTION ================= */
+.right img:hover{
+    transform:scale(1.05);
+}
+
+/* ================= ABOUT SHORT ================= */
 
 .about-short{
-    padding:80px 10%;
+    padding:80px 20px;
     text-align:center;
-    background:white;
-    color:#333;
+    background:#f5f7fa;
 }
 
 .about-short h2{
+    font-size:2.2rem;
     margin-bottom:20px;
-    font-size:32px;
 }
 
 .about-short p{
-    max-width:700px;
-    margin:0 auto 30px;
-    line-height:1.6;
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#111;
-    padding:40px 10%;
+    color:white;
+    padding:50px 0 20px 0;
 }
 
 .footer-container{
+    width:85%;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
 }
 
 .footer-section{
-    flex:1;
-    margin:10px;
+    flex-basis:30%;
+    margin-bottom:20px;
 }
 
 .footer-section h3{
@@ -170,16 +193,16 @@ footer{
 .footer-section a{
     color:white;
     text-decoration:none;
-    display:block;
-    margin-bottom:8px;
+    display:inline-block;
+    margin:5px 0;
     transition:0.3s;
 }
 
 .footer-section a:hover{
-    color:#00c9a7;
+    color:#00f2fe;
 }
 
-footer i{
+.footer-section i{
     font-size:22px;
     margin-right:10px;
 }
@@ -194,42 +217,59 @@ footer i{
 /* ================= CONTACT PAGE ================= */
 
 .contact{
+    min-height:100vh;
     padding:100px 10%;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
 }
 
 .contact .container{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
+    background:none;
+    box-shadow:none;
+    backdrop-filter:none;
+    padding:0;
 }
 
 .contactinfo{
-    flex:1;
-    margin-right:20px;
+    flex-basis:45%;
 }
 
 .contactform{
-    flex:1;
+    flex-basis:45%;
     background:white;
     color:black;
-    padding:30px;
-    border-radius:15px;
+    padding:25px;
+    border-radius:10px;
 }
 
 .contactform input,
 .contactform textarea{
     width:100%;
-    padding:10px;
     margin:10px 0;
-    border-radius:6px;
+    padding:10px;
     border:1px solid #ccc;
+    border-radius:5px;
 }
 
 .contactform input[type="submit"]{
-    background:#00c9a7;
-    color:white;
+    background:#00f2fe;
+    color:black;
     border:none;
     cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -237,7 +277,7 @@ footer i{
 @media(max-width:768px){
 
     nav{
-        padding:15px 5%;
+        padding:0 20px;
     }
 
     .container{
@@ -245,12 +285,21 @@ footer i{
         text-align:center;
     }
 
-    .right{
+    .left, .right{
+        flex-basis:100%;
+    }
+
+    .right img{
         margin-top:30px;
+        width:250px;
     }
 
     .footer-container{
         flex-direction:column;
         text-align:center;
+    }
+
+    .footer-section{
+        flex-basis:100%;
     }
 }
