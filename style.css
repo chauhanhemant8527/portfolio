@@ -211,3 +211,31 @@ background:white;
 body.light .card{
 background:white;
 }
+.projects-page{
+margin-top:150px;
+padding:40px;
+text-align:center;
+}
+
+.projects-page h1{
+font-size:2.5rem;
+margin-bottom:40px;
+}
+
+.project-card.big{
+max-width:900px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+border-radius:20px;
+text-align:left;
+line-height:1.6;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.project-card.big ul{
+margin-left:20px;
+margin-top:10px;
+}
+
