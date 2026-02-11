@@ -2,102 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hemant Chauhan | AI Java Developer</title>
+<title>Hemant Chauhan | Java Developer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
 
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
 <body>
 
-<!-- Loader -->
-<div id="loader">
-  <div class="spinner"></div>
-</div>
-
+<!-- NAVBAR -->
 <nav>
-<div class="logo">Hemant Chauhan</div>
-<div class="menu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
+    <div class="logo">Hemant Chauhan</div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="toggle">🌙</div>
 </nav>
 
+<!-- HERO SECTION -->
 <header>
-<div class="hero">
-<h2>Hello, I'm</h2>
-<h1>Hemant Chauhan</h1>
-<h3 class="typing"></h3>
-<p>Java Full Stack Developer building scalable backend systems using Spring Boot & REST APIs.</p>
-<a href="resume.pdf" download class="btn">Download Resume</a>
-</div>
+    <div class="container">
+
+        <div class="left">
+            <h2>Hello, I'm</h2>
+            <h1>Hemant Chauhan</h1>
+
+            <h3 class="typing"></h3>
+
+            <p>
+                Motivated Java Full Stack Developer with hands-on experience in 
+                Java, Spring Boot, REST APIs and MySQL.
+                Passionate about building scalable web applications.
+            </p>
+
+            <div class="buttons">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#about" class="btn">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="hemantchauhan.jpg" alt="Hemant Chauhan">
+        </div>
+
+    </div>
 </header>
 
-<!-- Projects -->
-<section class="projects">
-<h2>My Projects</h2>
-
-<div class="project-container">
-
-<div class="project-card">
-<h3>Inventory Management System</h3>
-<p>Spring Boot + MySQL + JWT Authentication</p>
-</div>
-
-<div class="project-card">
-<h3>REST API Backend</h3>
-<p>Secure scalable backend architecture</p>
-</div>
-
-<div class="project-card">
-<h3>AI Portfolio Website</h3>
-<p>Modern animated glass UI</p>
-</div>
-
-</div>
+<!-- ABOUT SECTION -->
+<section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+        I am a career-transitioning software developer with 5 years of industry experience.
+        Currently focused on backend development using Spring Boot and building secure REST APIs.
+    </p>
 </section>
 
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+        <p>Java</p>
+        <div class="bar"><div class="progress" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Spring Boot</p>
+        <div class="bar"><div class="progress" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>MySQL</p>
+        <div class="bar"><div class="progress" data-width="80%"></div></div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="card">
+    <h2>Contact Me</h2>
+    <p>Email: chauhanhemant342@gmail.com</p>
+    <p>Phone: +91 9724209274</p>
+    <p>Location: Ghaziabad, India</p>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Hemant Chauhan</p>
+    <p>© 2026 Hemant Chauhan | All Rights Reserved</p>
+
+    <div class="social">
+        <a href="https://www.instagram.com/chauhanhemant342/" target="_blank">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/" target="_blank">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
 </footer>
 
-<!-- AI Chat -->
-<div class="chat-widget">
-<div class="chat-header">Ask AI 🤖</div>
-<div class="chat-body" id="chatBody"></div>
-<input type="text" id="chatInput" placeholder="Ask something...">
-</div>
-
+<!-- JS -->
 <script>
-/* Typing */
-const text="Java Full Stack Developer";
-let i=0;
+/* Typing Effect */
+const text = "Java Full Stack Developer";
+let i = 0;
 function typing(){
-if(i<text.length){
-document.querySelector(".typing").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typing,80);
-}}
+    if(i < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing,80);
+    }
+}
 typing();
 
-/* Loader */
-window.addEventListener("load",()=>{
-document.getElementById("loader").style.display="none";
-});
+/* Dark Mode */
+document.querySelector(".toggle").onclick = function(){
+    document.body.classList.toggle("light");
+};
 
-/* Chat */
-const input=document.getElementById("chatInput");
-const body=document.getElementById("chatBody");
-
-input.addEventListener("keypress",function(e){
-if(e.key==="Enter"){
-let msg=input.value;
-body.innerHTML+=`<p><b>You:</b> ${msg}</p>`;
-body.innerHTML+=`<p><b>AI:</b> Thanks for reaching out!</p>`;
-input.value="";
-body.scrollTop=body.scrollHeight;
-}
+/* Skill Animation */
+window.addEventListener("scroll", function(){
+    document.querySelectorAll(".progress").forEach(bar=>{
+        bar.style.width = bar.dataset.width;
+    });
 });
 </script>
 
