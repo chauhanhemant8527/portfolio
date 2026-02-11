@@ -1,189 +1,235 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-                url("hemantchauhan.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-nav{
-    width: 100%;
-    height:70px;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 70px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
 .logo{
-    font-size: 2em;
-    font-weight: bold;
+    font-size:28px;
+    font-weight:600;
 }
 
 .menu a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.1em;
-    padding: 8px 15px;
+    text-decoration:none;
+    color:white;
+    margin-left:20px;
+    padding:8px 14px;
+    border-radius:6px;
+    transition:0.3s;
 }
 
 .menu a:hover{
-    background: #6ab04c;
-    border-radius: 6px;
+    background:#00c9a7;
 }
 
 /* ================= HERO SECTION ================= */
 
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top:80px;
+    background: linear-gradient(135deg,#1f1c2c,#928dab);
+}
+
 .container{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 70px;
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
 .left{
-    flex-basis: 45%;
+    flex:1;
 }
 
 .left h1{
-    font-family: 'Kalam', cursive;
-    font-size: 3.5em;
+    font-size:48px;
+    margin:10px 0;
+}
+
+.left h3{
+    color:#00c9a7;
+    margin-bottom:15px;
 }
 
 .left p{
-    line-height: 1.8rem;
-    margin-top: 15px;
+    max-width:500px;
+    line-height:1.6;
+    margin-bottom:25px;
 }
 
+/* Buttons */
+
+.btn{
+    background:#00c9a7;
+    padding:10px 22px;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    margin-right:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00a98b;
+}
+
+.btn-outline{
+    border:2px solid #00c9a7;
+    padding:10px 22px;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn-outline:hover{
+    background:#00c9a7;
+}
+
+/* Right Image */
+
 .right{
-    flex-basis: 40%;
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
 
 .right img{
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
+    width:300px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
 /* ================= ABOUT SECTION ================= */
 
-#bio{
-    padding: 60px 70px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: #f4f4f4;
+.about-short{
+    padding:80px 10%;
+    text-align:center;
+    background:white;
+    color:#333;
 }
 
-.leftbio{
-    flex-basis: 40%;
+.about-short h2{
+    margin-bottom:20px;
+    font-size:32px;
 }
 
-.leftbio img{
-    width: 100%;
-    height: auto;   /* FIXED */
-    border-radius: 10px;
-}
-
-.rightbio{
-    flex-basis: 55%;
-}
-
-.rightbio h1{
-    margin: 15px 0;
-}
-
-.rightbio p{
-    line-height: 1.6rem;
+.about-short p{
+    max-width:700px;
+    margin:0 auto 30px;
+    line-height:1.6;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#111;
-    color: white;
-    padding: 40px 0;
+    padding:40px 10%;
 }
 
-.cantaint{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
-.footer-contect{
-    flex-basis: 30%;
+.footer-section{
+    flex:1;
+    margin:10px;
 }
 
-.footer-contect h3{
-    margin-bottom: 15px;
+.footer-section h3{
+    margin-bottom:15px;
 }
 
-.footer-contect p,
-.footer-contect a{
-    font-size: 14px;
-    color: white;
-    text-decoration: none;
+.footer-section a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    margin-bottom:8px;
+    transition:0.3s;
 }
 
-.footer-contect a:hover{
-    color: #6ab04c;
+.footer-section a:hover{
+    color:#00c9a7;
+}
+
+footer i{
+    font-size:22px;
+    margin-right:10px;
+}
+
+.copyright{
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+    color:#aaa;
 }
 
 /* ================= CONTACT PAGE ================= */
 
 .contact{
-    min-height: 100vh;
-    padding: 50px 70px;
-    background: #222;
-    color: white;
+    padding:100px 10%;
 }
 
 .contact .container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
 .contactinfo{
-    flex-basis: 45%;
+    flex:1;
+    margin-right:20px;
 }
 
 .contactform{
-    flex-basis: 45%;
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 8px;
+    flex:1;
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
 }
 
 .contactform input,
 .contactform textarea{
-    width: 100%;
-    margin: 10px 0;
-    padding: 8px;
-    border: 1px solid #ccc;
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
 }
 
 .contactform input[type="submit"]{
-    background: #6ab04c;
-    color: white;
-    border: none;
-    cursor: pointer;
+    background:#00c9a7;
+    color:white;
+    border:none;
+    cursor:pointer;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -191,24 +237,20 @@ footer{
 @media(max-width:768px){
 
     nav{
-        padding: 0 20px;
+        padding:15px 5%;
     }
 
-    .container,
-    #bio,
-    .contact .container{
-        flex-direction: column;
-        padding: 20px;
+    .container{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .left, .right,
-    .leftbio, .rightbio,
-    .contactinfo, .contactform{
-        flex-basis: 100%;
-        margin-bottom: 30px;
+    .right{
+        margin-top:30px;
     }
 
-    .left h1{
-        font-size: 2.2em;
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
     }
 }
