@@ -418,7 +418,7 @@ footer {
   box-shadow: 0 0 15px #00f5ff, 0 0 15px #ff00c8;
   border-radius: 0 0 20px 20px;
 }
-/* ===== General Styles ===== */
+/* ===== General ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
@@ -427,6 +427,7 @@ body {
     color: #333;
 }
 
+/* ===== Nav ===== */
 nav {
     display: flex;
     justify-content: space-between;
@@ -453,6 +454,7 @@ nav .menu a:hover {
     color: #00b4d8;
 }
 
+/* ===== Header ===== */
 header {
     background: linear-gradient(135deg, #0077b6, #00b4d8);
     color: white;
@@ -461,16 +463,23 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-header h1 {
+.header-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.header-container h1 {
     margin: 0;
     font-size: 3rem;
     letter-spacing: 1px;
 }
 
-header p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    opacity: 0.9;
+.header-container .subtitle {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    font-weight: 400;
 }
 
 /* ===== Timeline ===== */
@@ -569,5 +578,17 @@ header p {
     .timeline-item {
         padding-left: 35px;
     }
-}
 
+    .header-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .header-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-container .subtitle {
+        font-size: 1rem;
+    }
+}
