@@ -104,7 +104,8 @@ nav {
   transition: 0.4s;
 }
 
-.menu a:hover::after {
+.menu a:hover::after,
+.menu a.active::after {
   width: 100%;
 }
 
@@ -186,69 +187,84 @@ header {
   box-shadow: 0 0 25px #00f5ff, 0 0 50px #ff00c8;
 }
 
-/* ================= PROJECT PAGE ================= */
-.projects-page {
-  margin-top: 150px;
-  padding: 40px;
-  text-align: center;
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    padding: 120px 50px 100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: white;
 }
 
-.projects-page h1 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-  background: linear-gradient(45deg, #00f5ff, #ff00c8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.about-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
 }
 
-/* BIG PROJECT CARD */
-.project-card.big {
-  max-width: 950px;
-  margin: auto;
-  padding: 50px;
-  border-radius: 25px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255,255,255,0.1);
-  text-align: left;
-  line-height: 1.8;
-  position: relative;
-  transition: 0.5s;
-  overflow: hidden;
+/* LEFT AND RIGHT COLUMNS */
+.left-column, .right-column {
+    flex: 1;
+    min-width: 300px;
 }
 
-/* Animated Border */
-.project-card.big::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg,#00f5ff,#ff00c8,#00f5ff);
-  z-index: -1;
-  border-radius: 25px;
-  animation: borderMove 6s linear infinite;
+/* Column Headings */
+.column h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg,#00f5ff,#ff00c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@keyframes borderMove {
-  0% {filter: hue-rotate(0deg);}
-  100% {filter: hue-rotate(360deg);}
+/* Boxes inside each column */
+.column .box {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding: 25px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
 }
 
-/* Hover 3D Effect */
-.project-card.big:hover {
-  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.03);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+.column .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #00f5ff, 0 0 25px #ff00c8;
 }
 
-.project-card.big ul {
-  margin-left: 20px;
-  margin-top: 15px;
+/* Box headings */
+.box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #f1c40f;
 }
 
-.project-card.big li {
-  margin-bottom: 10px;
+.box h4 {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+/* Paragraph text */
+.box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 900px){
+    .about-section .container {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        min-width: 100%;
+    }
 }
 
 /* ================= FOOTER ================= */
@@ -259,21 +275,6 @@ footer {
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(15px);
   border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ================= LIGHT MODE ================= */
-body.light {
-  background: #f5f5f5;
-  color: #111;
-}
-
-body.light nav {
-  background: rgba(255,255,255,0.8);
-}
-
-body.light .project-card.big {
-  background: rgba(255,255,255,0.9);
-  color: black;
 }
 
 /* ================= AI CHAT WIDGET ================= */
