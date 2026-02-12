@@ -421,29 +421,29 @@ footer {
 /* ===== General ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #222;
 }
 
-/* ===== Nav ===== */
+/* ===== Navigation ===== */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background-color: #0077b6;
+    background-color: #1a1a1a;
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: #f5f5f5;
 }
 
 nav .menu a {
-    color: white;
+    color: #f5f5f5;
     text-decoration: none;
     margin-left: 25px;
     font-weight: 500;
@@ -451,16 +451,15 @@ nav .menu a {
 }
 
 nav .menu a:hover {
-    color: #00b4d8;
+    color: #00aaff;
 }
 
 /* ===== Header ===== */
 header {
-    background: linear-gradient(135deg, #0077b6, #00b4d8);
-    color: white;
+    background-color: #ffffff;
     text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 50px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 .header-container {
@@ -472,14 +471,13 @@ header {
 
 .header-container h1 {
     margin: 0;
-    font-size: 3rem;
-    letter-spacing: 1px;
+    font-size: 2.5rem;
+    color: #222;
 }
 
 .header-container .subtitle {
-    font-size: 1.3rem;
-    opacity: 0.85;
-    font-weight: 400;
+    font-size: 1.2rem;
+    color: #555;
 }
 
 /* ===== Timeline ===== */
@@ -497,7 +495,7 @@ header {
     top: 0;
     width: 4px;
     height: 100%;
-    background-color: #0077b6;
+    background-color: #555;
 }
 
 /* Timeline Item */
@@ -514,36 +512,35 @@ header {
     top: 5px;
     width: 16px;
     height: 16px;
-    background-color: #0077b6;
+    background-color: #00aaff;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #0077b6;
+    border: 3px solid #fff;
 }
 
 /* Timeline Content */
 .timeline-date {
     font-weight: bold;
-    color: #0077b6;
+    color: #00aaff;
     margin-bottom: 5px;
     font-size: 0.95rem;
 }
 
 .timeline-content {
-    background-color: white;
+    background-color: #fff;
     padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .timeline-content h2 {
     margin: 0 0 5px 0;
-    color: #0077b6;
+    color: #00aaff;
     font-size: 1.5rem;
 }
 
@@ -585,7 +582,7 @@ header {
     }
 
     .header-container h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .header-container .subtitle {
