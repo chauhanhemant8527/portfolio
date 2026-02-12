@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
 <!-- Loader -->
@@ -34,17 +33,12 @@
 <!-- HERO -->
 <header>
   <div class="hero">
-    <!-- Your Photo -->
-    <img src="hemantchauhan.jpg" alt="Hemant Chauhan">
-
+    <img src="images/profile.jpg" alt="Hemant Chauhan">
     <h2>Hello, I'm</h2>
     <h1>Hemant Chauhan</h1>
     <h3 class="typing"></h3>
-    <p>
-      Java Full Stack Developer building scalable backend systems 
-      using Spring Boot & REST APIs.
-    </p>
-    <a href="Hemant Chauhan.pdf" download class="btn">Download Resume</a>
+    <p>Java Full Stack Developer building scalable backend systems using Spring Boot & REST APIs.</p>
+    <a href="resume.pdf" download class="btn">Download Resume</a>
   </div>
 </header>
 
@@ -57,7 +51,9 @@
 <div class="chat-widget">
   <div class="chat-header">Ask AI 🤖</div>
   <div class="chat-body" id="chatBody"></div>
-  <input type="text" id="chatInput" placeholder="Ask something...">
+  <form id="chatForm">
+    <input type="text" id="chatInput" placeholder="Ask something..." autocomplete="off">
+  </form>
 </div>
 
 <!-- Scripts -->
@@ -79,22 +75,50 @@ window.addEventListener("load", () => {
   document.getElementById("loader").style.display = "none";
 });
 
-/* Chat */
-const input = document.getElementById("chatInput");
-const body = document.getElementById("chatBody");
+/* ================= DYNAMIC AI CHAT ================= */
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+const chatBody = document.getElementById("chatBody");
 
-input.addEventListener("keypress", function(e){
-  if(e.key === "Enter"){
-    let msg = input.value;
-    if(msg.trim() !== ""){
-      body.innerHTML += `<p><b>You:</b> ${msg}</p>`;
-      body.innerHTML += `<p><b>AI:</b> Thanks for reaching out! I will respond soon 🤖</p>`;
-      input.value = "";
-      body.scrollTop = body.scrollHeight;
-    }
+chatForm.addEventListener("submit", async function(e){
+  e.preventDefault();
+  const message = chatInput.value.trim();
+  if(!message) return;
+
+  // Display user's message
+  chatBody.innerHTML += `<p><b>You:</b> ${message}</p>`;
+  chatInput.value = "";
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Display temporary AI "typing..."
+  const aiMsg = document.createElement("p");
+  aiMsg.innerHTML = `<b>AI:</b> <i>Typing...</i>`;
+  chatBody.appendChild(aiMsg);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  try {
+    // Call OpenAI API
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{role:"user", content: message}],
+        max_tokens: 200
+      })
+    });
+
+    const data = await response.json();
+    aiMsg.innerHTML = `<b>AI:</b> ${data.choices[0].message.content}`;
+    chatBody.scrollTop = chatBody.scrollHeight;
+  } catch (err) {
+    aiMsg.innerHTML = `<b>AI:</b> Sorry, something went wrong!`;
+    console.error(err);
   }
 });
 </script>
-
 </body>
 </html>
