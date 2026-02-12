@@ -418,5 +418,86 @@ footer {
   box-shadow: 0 0 15px #00f5ff, 0 0 15px #ff00c8;
   border-radius: 0 0 20px 20px;
 }
+/* ===== Experience  ===== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.experience-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* ===== Experience Cards ===== */
+.experience-item {
+    background-color: white;
+    margin: 20px 0;
+    padding: 25px 30px;
+    border-left: 6px solid #0077b6;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.experience-item h2 {
+    margin: 0;
+    color: #0077b6;
+    font-size: 1.5rem;
+}
+
+.experience-item h3 {
+    margin: 5px 0 10px 0;
+    font-weight: normal;
+    color: #555;
+}
+
+.experience-item .duration {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.experience-item .location {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.experience-item ul {
+    margin: 10px 0 0 20px;
+}
+
+.experience-item ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .experience-item {
+        padding: 20px;
+    }
+}
+
 
 
