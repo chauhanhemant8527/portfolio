@@ -427,6 +427,32 @@ body {
     color: #333;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #0077b6;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav .menu a:hover {
+    color: #00b4d8;
+}
+
 header {
     background: linear-gradient(135deg, #0077b6, #00b4d8);
     color: white;
@@ -447,101 +473,101 @@ header p {
     opacity: 0.9;
 }
 
-/* ===== Experience Section ===== */
-.experience-section {
+/* ===== Timeline ===== */
+.timeline {
     max-width: 900px;
     margin: 50px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    position: relative;
+    padding-left: 50px;
 }
 
-/* ===== Experience Cards ===== */
-.experience-item {
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #0077b6;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: #0077b6;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #0077b6;
+}
+
+/* Timeline Content */
+.timeline-date {
+    font-weight: bold;
+    color: #0077b6;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.timeline-content {
     background-color: white;
-    padding: 30px 35px;
+    padding: 25px 30px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 
-.experience-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background: #0077b6;
-    border-radius: 12px 0 0 12px;
-}
-
-.experience-item:hover {
+.timeline-content:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* Header inside each experience */
-.experience-header h2 {
-    margin: 0;
+.timeline-content h2 {
+    margin: 0 0 5px 0;
     color: #0077b6;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
-.experience-header h3 {
-    margin: 5px 0 10px 0;
-    font-weight: 500;
+.timeline-content h3 {
+    margin: 0 0 15px 0;
     color: #555;
+    font-weight: 500;
     font-size: 1.1rem;
 }
 
-.experience-header .duration,
-.experience-header .location {
-    display: inline-block;
-    font-style: italic;
-    color: #777;
-    margin-right: 15px;
-    font-size: 0.95rem;
-}
-
-/* List Styling */
-.experience-item ul {
-    margin-top: 15px;
+.timeline-content ul {
+    margin: 0;
     padding-left: 20px;
-    list-style-type: disc;
 }
 
-.experience-item ul li {
+.timeline-content ul li {
     margin-bottom: 10px;
     line-height: 1.6;
     font-size: 1rem;
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.2rem;
+@media (max-width: 700px) {
+    .timeline {
+        padding-left: 30px;
     }
 
-    header p {
-        font-size: 1rem;
+    .timeline-item::before {
+        left: 7px;
     }
 
-    .experience-item {
-        padding: 25px 20px;
-    }
-
-    .experience-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .experience-header h3 {
-        font-size: 1rem;
+    .timeline-item {
+        padding-left: 35px;
     }
 }
-
-
 
