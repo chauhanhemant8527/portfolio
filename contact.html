@@ -22,29 +22,18 @@
 
 <section class="contact-page">
 
-<h1 class="contact-title">Let's Work Together</h1>
+<h1 class="contact-title">Let's Build Something Amazing</h1>
 
 <div class="contact-container">
 
-    <!-- LEFT SIDE -->
-    <div class="contact-info">
+    <!-- LEFT -->
+    <div class="contact-info glass-card tilt">
 
-        <h2>Contact Information</h2>
+        <h2>Contact Info</h2>
 
-        <div class="info-card">
-            <span>📧</span>
-            <p>chauhanhemant342@gmail.com</p>
-        </div>
-
-        <div class="info-card">
-            <span>📱</span>
-            <p>+91 9724209274</p>
-        </div>
-
-        <div class="info-card">
-            <span>📍</span>
-            <p>Ghaziabad, India</p>
-        </div>
+        <div class="info-item">📧 chauhanhemant342@gmail.com</div>
+        <div class="info-item">📱 +91 9724209274</div>
+        <div class="info-item">📍 Ghaziabad, India</div>
 
         <div class="social-links">
             <a href="https://www.linkedin.com/in/hemant-chauhan-9b9628172" target="_blank">LinkedIn</a>
@@ -53,12 +42,12 @@
 
     </div>
 
-    <!-- RIGHT SIDE FORM -->
-    <div class="contact-form-box">
+    <!-- RIGHT FORM -->
+    <div class="contact-form-box glass-card tilt">
 
         <h2>Send Message</h2>
 
-        <form action="https://formspree.io/f/xlgwjwoj" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xlgwjwoj" method="POST">
 
             <div class="input-group">
                 <input type="text" name="name" required>
@@ -81,6 +70,11 @@
 
     </div>
 
+</div>
+
+<!-- SUCCESS POPUP -->
+<div class="success-popup" id="successPopup">
+    ✅ Message Sent Successfully!
 </div>
 
 </section>
