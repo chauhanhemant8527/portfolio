@@ -1,87 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Contact - Hemant Chauhan</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<nav>
-<div class="logo">Hemant Chauhan</div>
-<div class="menu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="project.html">Projects</a>
-<a href="experience.html">Experience</a>
-<a href="contact.html" class="active">Contact</a>
-</div>
-</nav>
-
 <section class="contact-page">
 
-<h1 class="contact-title">Let's Build Something Amazing</h1>
+<div class="contact-wrapper">
 
-<div class="contact-container">
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+        <h2>Let's Connect</h2>
+        <p class="tagline">Open for Java Developer opportunities & collaborations.</p>
 
-    <!-- LEFT -->
-    <div class="contact-info glass-card tilt">
+        <div class="info-box">
+            <span>📧</span>
+            <p>chauhanhemant342@gmail.com</p>
+        </div>
 
-        <h2>Contact Info</h2>
+        <div class="info-box">
+            <span>📱</span>
+            <p>+91 9724209274</p>
+        </div>
 
-        <div class="info-item">📧 chauhanhemant342@gmail.com</div>
-        <div class="info-item">📱 +91 9724209274</div>
-        <div class="info-item">📍 Ghaziabad, India</div>
+        <div class="info-box">
+            <span>📍</span>
+            <p>Ghaziabad, India</p>
+        </div>
 
         <div class="social-links">
             <a href="https://www.linkedin.com/in/hemant-chauhan-9b9628172" target="_blank">LinkedIn</a>
             <a href="https://github.com/chauhanhemant8527" target="_blank">GitHub</a>
         </div>
-
     </div>
 
     <!-- RIGHT FORM -->
-    <div class="contact-form-box glass-card tilt">
-
+    <div class="contact-form-box">
         <h2>Send Message</h2>
 
-        <form id="contactForm" action="https://formspree.io/f/xlgwjwoj" method="POST">
+        <form action="https://formspree.io/f/xlgwjwoj" method="POST">
 
-            <div class="input-group">
-                <input type="text" name="name" required>
-                <label>Full Name</label>
-            </div>
+            <input type="text" name="name" placeholder="Full Name" required>
 
-            <div class="input-group">
-                <input type="email" name="email" required>
-                <label>Email Address</label>
-            </div>
+            <input type="email" name="email" placeholder="Email Address" required>
 
-            <div class="input-group">
-                <textarea name="message" rows="4" required></textarea>
-                <label>Your Message</label>
-            </div>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-            <button type="submit" class="btn">Send Message 🚀</button>
+            <button type="submit">Send Message</button>
 
         </form>
-
     </div>
 
 </div>
 
-<!-- SUCCESS POPUP -->
-<div class="success-popup" id="successPopup">
-    ✅ Message Sent Successfully!
-</div>
-
 </section>
-
-<footer>
-<p>© 2026 Hemant Chauhan | Java Developer</p>
-</footer>
-
-</body>
-</html>
