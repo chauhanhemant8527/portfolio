@@ -197,94 +197,234 @@ header {
    EXPERIENCE.HTML PAGE CSS
 ========================================================= */
 
-.timeline{
-  max-width:900px;
-  margin:120px auto 80px;
-  position:relative;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  width:3px;
-  height:100%;
-  background:linear-gradient(#3b82f6,#8b5cf6);
-  transform:translateX(-50%);
+body{
+    color:white;
+    background: linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#000000);
+    background-size:400% 400%;
+    animation: bgMove 12s ease infinite;
+    overflow-x:hidden;
 }
+
+/* Background Animation */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.menu a{
+    margin-left:25px;
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+    transition:.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+header{
+    margin-top:140px;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:42px;
+    font-weight:800;
+    background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    color:#ccc;
+    margin-top:10px;
+    font-size:15px;
+}
+
+/* ===============================
+   TIMELINE
+================================ */
+
+.timeline{
+    max-width:1000px;
+    margin:80px auto;
+    position:relative;
+    padding:0 20px;
+}
+
+/* Center Line */
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    width:3px;
+    height:100%;
+    background:linear-gradient(#3b82f6,#8b5cf6);
+    transform:translateX(-50%);
+}
+
+/* Timeline Item */
 
 .timeline-item{
-  width:50%;
-  padding:25px;
-  position:relative;
+    width:50%;
+    padding:30px;
+    position:relative;
 }
 
-.timeline-item:nth-child(odd){ left:0; text-align:right; }
-.timeline-item:nth-child(even){ left:50%; }
-
-.timeline-item::before{
-  content:"";
-  position:absolute;
-  top:28px;
-  right:-8px;
-  width:14px;
-  height:14px;
-  background:#3b82f6;
-  border-radius:50%;
-  box-shadow:0 0 15px #3b82f6;
+.timeline-item:nth-child(odd){
+    left:0;
+    text-align:right;
 }
 
-.timeline-item:nth-child(even)::before{
-  left:-8px;
-  right:auto;
+.timeline-item:nth-child(even){
+    left:50%;
 }
+
+/* Dot */
+
+.timeline-dot{
+    position:absolute;
+    top:40px;
+    right:-10px;
+    width:18px;
+    height:18px;
+    background:#3b82f6;
+    border-radius:50%;
+    box-shadow:0 0 15px #3b82f6;
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+    left:-10px;
+    right:auto;
+}
+
+/* Card */
 
 .timeline-content{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(18px);
-  padding:25px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,0.1);
-  transition:.3s;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    padding:28px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.15);
+    transition:.4s;
 }
 
 .timeline-content:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 30px rgba(139,92,246,0.4);
+    transform:translateY(-8px);
+    box-shadow:0 0 35px rgba(139,92,246,0.5);
 }
+
+/* Text Styling */
 
 .timeline-date{
-  font-size:13px;
-  color:#8b5cf6;
-  font-weight:600;
-  margin-bottom:8px;
-  display:block;
+    font-size:13px;
+    font-weight:600;
+    color:#8b5cf6;
+    margin-bottom:8px;
+    display:block;
 }
 
-.timeline-content h2{ font-size:18px; }
-.timeline-content h3{ font-size:13px; color:#ccc; margin:8px 0 12px; }
-.timeline-content ul{ padding-left:18px; }
-.timeline-content li{ font-size:13px; margin-bottom:6px; line-height:1.6; }
+.timeline-content h2{
+    font-size:19px;
+    margin-bottom:5px;
+}
+
+.timeline-content h3{
+    font-size:14px;
+    color:#ccc;
+    margin-bottom:12px;
+}
+
+.timeline-content ul{
+    padding-left:18px;
+}
+
+.timeline-content li{
+    font-size:14px;
+    margin-bottom:6px;
+    line-height:1.6;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
 
 @media(max-width:900px){
 
-.timeline::before{ left:8px; }
+.timeline::before{
+    left:8px;
+}
 
 .timeline-item{
-  width:100%;
-  padding-left:35px;
-  margin-bottom:40px;
+    width:100%;
+    padding-left:40px;
+    margin-bottom:50px;
 }
 
 .timeline-item:nth-child(odd),
 .timeline-item:nth-child(even){
-  left:0;
-  text-align:left;
+    left:0;
+    text-align:left;
 }
 
-.timeline-item::before{
-  left:-2px;
-  right:auto;
+.timeline-dot{
+    left:-2px;
+    right:auto;
 }
 
 }
@@ -345,5 +485,6 @@ header {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
 }
+
 
 
